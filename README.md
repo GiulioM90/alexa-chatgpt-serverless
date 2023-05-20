@@ -10,6 +10,9 @@ authorLink: 'https://github.com/serverless'
 authorName: 'Serverless, inc.'
 authorAvatar: 'https://avatars1.githubusercontent.com/u/13742415?s=200&v=4'
 -->
+
+
+<!-- Some command to use and test locally lambda functions -->
 # aws ssm put-parameter --name my-secret-string --value TOPsecretData --type String
 # serverless invoke local --function function1 --data '{"request": {"type": "LaunchRequest"}}'
 # serverless invoke local --function function1 --data '{"request": {"type": "IntentRequest", "intent": {"name": "NomeIntent"}}}'
