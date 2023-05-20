@@ -13,11 +13,12 @@ authorAvatar: 'https://avatars1.githubusercontent.com/u/13742415?s=200&v=4'
 
 
 <!-- Some command to use and test locally lambda functions -->
-# aws ssm put-parameter --name my-secret-string --value TOPsecretData --type String
-# serverless invoke local --function function1 --data '{"request": {"type": "LaunchRequest"}}'
-# serverless invoke local --function function1 --data '{"request": {"type": "IntentRequest", "intent": {"name": "NomeIntent"}}}'
-# serverless invoke local --function gpt-skill --data '{"request": {"type": "IntentRequest", "intent": {"name": "ChatGPTIntent", "slots": {"question": {"value": "Your question goes here"}}}}}'
-
+```bash
+aws ssm put-parameter --name my-secret-string --value TOPsecretData --type String
+serverless invoke local --function function1 --data '{"request": {"type": "LaunchRequest"}}'
+serverless invoke local --function function1 --data '{"request": {"type": "IntentRequest", "intent": {"name": "NomeIntent"}}}'
+serverless invoke local --function gpt-skill --data '{"request": {"type": "IntentRequest", "intent": {"name": "ChatGPTIntent", "slots": {"question": {"value": "Your question goes here"}}}}}'
+```
 # Serverless Framework AWS NodeJS Example
 
 This template demonstrates how to deploy a NodeJS function running on AWS Lambda using the traditional Serverless Framework. The deployed function does not include any event definitions as well as any kind of persistence (database). For more advanced configurations check out the [examples repo](https://github.com/serverless/examples/) which includes integrations with SQS, DynamoDB or examples of functions that are triggered in `cron`-like manner. For details about configuration of specific `events`, please refer to our [documentation](https://www.serverless.com/framework/docs/providers/aws/events/).
