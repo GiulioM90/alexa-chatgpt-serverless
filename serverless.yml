@@ -1,0 +1,24 @@
+service: alexaTest
+frameworkVersion: '3'
+
+plugins:
+  - serverless-bundle
+  - serverless-offline
+  - serverless-step-functions
+  - serverless-step-functions-offline
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: ${opt:region, self:custom.defaultRegion}
+
+custom:
+  defaultRegion: eu-central-1
+  defaultStage: prod
+  apiKey: ${ssm:gpt-api-key}
+
+functions:
+  gpt-skill:
+    handler: gpt/index.handler
+    environment:
+      API_KEY_GPT: ${self:custom.apiKey}
