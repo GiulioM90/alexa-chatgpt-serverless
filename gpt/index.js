@@ -14,12 +14,12 @@ const LaunchRequestHandler = {
     return Alexa.getRequestType(handlerInput.requestEnvelope) === 'LaunchRequest';
   },
   handle(handlerInput) {
-    const speechText = 'Ciao, siamo entrati nell ambiente di chat G. P. T. , chiedi quello che vuoi!';
+    const speechText = 'Ciao, siamo entrati nell ambiente di chat G. P. T. , puoi chiedermi quello che vuoi!';
 
     return handlerInput.responseBuilder
       .speak(speechText)
       .reprompt(speechText)
-      .withSimpleCard('Ciao, siamo entrati nell ambiente di chat G. P. T. , chiedi quello che vuoi!', speechText)
+      .withSimpleCard('Ciao, siamo entrati nell ambiente di chat G. P. T. , puoi chiedermi quello che vuoi!', speechText)
       .getResponse();
   }
 };
